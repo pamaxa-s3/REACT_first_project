@@ -1,0 +1,31 @@
+.sidebar {
+    grid-area: n;
+    background-color: #26af5b;
+}
+
+ul {
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.item {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+    color: #ffffff;
+}
+.item.active a {
+    color: #e34126;
+}
+
+.item a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.item a:hover {
+    color: #434343;
+}

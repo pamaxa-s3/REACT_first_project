@@ -1,0 +1,27 @@
+.item {
+    margin: 30px 0;
+}
+
+.img {
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    color: #b41717;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.text {
+    text-align: center;
+    font-size: 18px;
+    color: #b5f30b;
+    line-height: 30px;
+    font-weight: 500;
+}
