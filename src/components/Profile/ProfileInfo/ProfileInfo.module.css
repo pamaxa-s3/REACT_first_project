@@ -1,0 +1,15 @@
+.profileInfo {
+  
+}
+
+.profileInfo img {
+    width: 100%;
+    height: 200px;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px 0;
+}
