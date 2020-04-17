@@ -1,4 +1,36 @@
 .dialogs {
-    background-color: #e06f6f;
-    height: 100%;
+    background-color: #f7d8d8;
+    display: grid;                                      
+    grid-template-columns: 3fr 9fr;
 }
+
+.dialogs_items {
+    padding: 10px 20px;
+}
+
+.dialog {
+    margin: 10px 0;
+}
+
+.dialog a {
+    color: #25049c;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 24px;
+    transition: all 0.3s;
+}
+
+.dialog a:hover {
+    color: #aa0505;
+    text-decoration: underline;
+}
+
+.dialog a.active {
+    color: #7c0303;
+}
+
+.messages {
+    padding: 10px 20px;
+}
+
+.message {}
