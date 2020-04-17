@@ -13,9 +13,8 @@ ul {
     list-style: none;
     margin: 10px 0;
     padding: 0;
-    color: #ffffff;
 }
-.item.active a {
+.item a.active {
     color: #e34126;
 }
 

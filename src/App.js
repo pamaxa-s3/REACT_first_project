@@ -15,10 +15,10 @@ const App = (props) => {
 			<div className="app-wrapper">
 
 				<Header />
-		
+
 				<Sidebar />
-		
-				<div className = 'app-wrapper-content'>
+
+				<div className='app-wrapper-content'>
 					<Route path='/message' component={Dialogs} />
 					<Route path='/profile' component={Profile} />
 					<Route path='/news' component={News} />
