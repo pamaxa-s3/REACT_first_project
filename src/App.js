@@ -10,7 +10,6 @@ import Music from './components/Music/Music';
 import Contact from './components/Contact/Contact';
 
 const App = (props) => {
-	
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
@@ -20,8 +19,8 @@ const App = (props) => {
 				<Sidebar />
 
 				<div className='app-wrapper-content'>
-					<Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages} />} />
-					<Route path='/profile' render={() => <Profile posts={props.posts} />} />
+					<Route path='/dialogs' render={() => <Dialogs state={props.state.messagesPage} />} />
+					<Route path='/profile' render={() => <Profile state={props.state.profilePage} />} />
 					<Route path='/news' render={() => <News />} />
 					<Route path='/music' render={() => <Music />} />
 					<Route path='/contact' render={() => <Contact />} />
