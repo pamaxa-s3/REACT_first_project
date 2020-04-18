@@ -1,0 +1,25 @@
+.dialogsItems {
+    padding: 10px 20px;
+}
+
+.dialog {
+    margin: 10px 0;
+}
+
+.dialog a {
+    color: #ade70c;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 24px;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.dialog a:hover {
+    color: #b1e78d;
+    text-decoration: underline;
+}
+
+.dialog a.active {
+    color: #7c0303;
+}
