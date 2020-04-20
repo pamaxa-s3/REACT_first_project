@@ -6,16 +6,18 @@ const MyPosts = (props) => {
      let postsElements = props.posts.map(p => <Post message={p.message} avatar={"https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg"} likesCount={p.likesCount} />);
      let newPostElement = React.createRef();
      let addPost = () => {
+          props.addPost();
+     };
+     let onPostChange = () => {
           let text = newPostElement.current.value;
-          props.addPost(text);
-          newPostElement.current.value = '';
+          props.updateNewPostChange(text);
      };
 
      return (
           <div className={s.my_posts}>
                <div className={s.addPost}>
                     <div>
-                         <textarea ref={newPostElement}></textarea>
+                         <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText} />
                     </div>
                     <div>
                          <button onClick={addPost}>Add post</button>
