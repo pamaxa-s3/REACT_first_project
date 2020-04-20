@@ -1,15 +1,15 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
     profilePage: {
         posts: [{
                 id: 1,
                 message: 'Hi, how are you?',
-                avatar: 'https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg',
                 likesCount: 121
             },
             {
                 id: 2,
                 message: 'Hello My Friend!',
-                avatar: 'https://pbs.twimg.com/profile_images/561215760333545472/Hv-8dy5D_400x400.jpeg',
                 likesCount: 341
             },
         ]
@@ -65,6 +65,17 @@ let state = {
             }
         ]
     }
+};
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    };
+
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 };
 
 export default state;

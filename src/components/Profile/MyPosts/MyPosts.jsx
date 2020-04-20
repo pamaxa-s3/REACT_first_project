@@ -3,25 +3,25 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-     let postsElements = props.posts.map(p => <Post message={p.message} avatar={p.avatar} likesCount={p.likesCount} />);
+     let postsElements = props.posts.map(p => <Post message={p.message} avatar={"https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg"} likesCount={p.likesCount} />);
      let newPostElement = React.createRef();
      let addPost = () => {
           let text = newPostElement.current.value;
-          alert(text);
+          props.addPost(text);
+          newPostElement.current.value = '';
      };
 
      return (
           <div className={s.my_posts}>
                <div className={s.addPost}>
-                    <form action="#">
-                         <div>
-                              <textarea ref={newPostElement}></textarea>
-                         </div>
-                         <div>
-                              <button onClick={addPost} type='submit' >Add post</button>
-                         </div>
-                    </form>
+                    <div>
+                         <textarea ref={newPostElement}></textarea>
+                    </div>
+                    <div>
+                         <button onClick={addPost}>Add post</button>
+                    </div>
                </div>
+
                <div className={s.posts}>
                     {postsElements}
                </div>
