@@ -1,25 +1,50 @@
-.dialogsItems {
-    padding: 10px 20px;
-}
-
 .dialog {
-    margin: 10px 0;
+    margin: 10px 0 30px;
+    text-align: center;
 }
 
-.dialog a {
+.dialogsItems {
+    flex: 0 0 150px;
+    padding: 10px 20px;
+    background-color: #584e4e;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    margin-right: 20px;
+}
+
+.item {
+    display: block;
     color: #ade70c;
     text-decoration: none;
     font-size: 18px;
     line-height: 24px;
     transition: all 0.2s;
     font-weight: 500;
+    margin-bottom: 50px;
 }
 
-.dialog a:hover {
+.item:hover {
     color: #b1e78d;
     text-decoration: underline;
 }
 
-.dialog a.active {
+.item.active {
     color: #7c0303;
+}
+
+.avatar {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
