@@ -1,6 +1,5 @@
-import {
-    rerenderEntireTree
-} from "../render";
+let rerenderEntireTree = () =>{
+}
 
 let state = {
     profilePage: {
@@ -73,7 +72,7 @@ let state = {
     }
 };
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
@@ -82,15 +81,15 @@ export let addPost = () => {
 
     state.profilePage.posts.push(newPost);
     state.profilePage.newPostText = '';
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 };
 
-export let updateNewPostChange = (newText) => {
+export const updateNewPostChange = (newText) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 };
 
-export let sendMessage = () => {
+export const sendMessage = () => {
     let newMessage = {
         id: 4,
         message: state.messagesPage.messages.newMessageText
@@ -98,12 +97,18 @@ export let sendMessage = () => {
 
     state.messagesPage.messages.message.push(newMessage);
     state.messagesPage.messages.newMessageText = '';
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 };
 
-export let updateNewMessageChange = (newText) => {
+export const updateNewMessageChange = (newText) => {
     state.messagesPage.messages.newMessageText = newText;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 };
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer; //observer(наблюдатель-eng.) патерн! похож на патерн publisher-subscriber. По этому же патерну работает addEventListener и другие обработчики событий (onClick...и т.д.)
+}
+
+window.state = state; //выведет в консоле весь state, если написать команду 'state'
 
 export default state;
