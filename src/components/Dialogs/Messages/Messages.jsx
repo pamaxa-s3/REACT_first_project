@@ -6,18 +6,25 @@ const Messages = (props) => {
     let messagesElements = props.messages.map(m => <Message message={m.message} id={m.id} />);
     let addMessage = React.createRef();
     let sendMessage = () => {
+        props.sendMessage();
+    };
+
+    let onMessageChange = () => {
         let text = addMessage.current.value;
-        alert(text);
+
+        props.updateNewMessageChange(text);
     };
 
     return (
         <div className={s.messages}>
             {messagesElements}
             <div className={s.addMessageBlock}>
-                <form action="#">
-                    <textarea ref={addMessage}></textarea>
-                    <button onClick={sendMessage} type="submit">send message</button>
-                </form>
+                <div>
+                    <textarea onChange={onMessageChange} ref={addMessage} value={props.newMessageText} />
+                </div>
+                <div>
+                    <button onClick={sendMessage}>send message</button>
+                </div>
             </div>
         </div>
     );

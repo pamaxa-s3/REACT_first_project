@@ -4,11 +4,13 @@ import Messages from './Messages/Messages';
 import DialogsItem from './DialogsItem/DialogsItem';
 
 const Dialogs = (props) => {
-
     return (
         <div className={s.dialogs}>
-            <DialogsItem dialogs={props.state.dialogs} />
-            <Messages messages={props.state.messages} />
+            <DialogsItem dialogs={props.messagesPage.dialogs} />
+            <Messages messages={props.messagesPage.messages.message}
+            sendMessage={props.sendMessage}
+            newMessageText={props.newMessageText}
+            updateNewMessageChange={props.updateNewMessageChange} />
         </div>
     );
 }
