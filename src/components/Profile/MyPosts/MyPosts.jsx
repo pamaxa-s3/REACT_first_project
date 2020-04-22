@@ -6,11 +6,11 @@ const MyPosts = (props) => {
      let postsElements = props.posts.map(p => <Post message={p.message} avatar={"https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg"} likesCount={p.likesCount} />);
      let newPostElement = React.createRef();
      let addPost = () => {
-          props.addPost();
+          props.dispatch({type: 'ADD-POST'});
      };
      let onPostChange = () => {
           let text = newPostElement.current.value;
-          props.updateNewPostChange(text);
+          props.dispatch({ type: 'UPDATE-NEW-POST-CHANGE', newText: text});
      };
 
      return (

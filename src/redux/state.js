@@ -69,41 +69,45 @@ let store = {
             ]
         }
     },
+    _callSubscriber() {},
     getState() {
         return this._state
     },
-    _callSubscriber() {},
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-       this._callSubscriber(this._state);
-    },
-    updateNewPostChange(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    sendMessage() {
-        let newMessage = {
-            id: 4,
-            message: this._state.messagesPage.messages.newMessageText
-        };
-
-        this._state.messagesPage.messages.message.push(newMessage);
-        this._state.messagesPage.messages.newMessageText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewMessageChange(newText) {
-        this._state.messagesPage.messages.newMessageText = newText;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer; //observer(наблюдатель-eng.) патерн! похож на патерн publisher-subscriber. По этому же патерну работает addEventListener и другие обработчики событий (onClick...и т.д.)
+    },
+  
+    selectDialog(userId) {
+        this._state.selectedUserId = userId;
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+            };
+
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-CHANGE') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'SEND-MESSAGE') {
+            let newMessage = {
+                id: 4,
+                message: this._state.messagesPage.messages.newMessageText
+            };
+
+            this._state.messagesPage.messages.message.push(newMessage);
+            this._state.messagesPage.messages.newMessageText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-CHANGE') {
+            this._state.messagesPage.messages.newMessageText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 }
 
