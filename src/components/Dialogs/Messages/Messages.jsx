@@ -6,13 +6,13 @@ const Messages = (props) => {
     let messagesElements = props.messages.map(m => <Message message={m.message} id={m.id} />);
     let addMessage = React.createRef();
     let sendMessage = () => {
-        props.sendMessage();
+        props.dispatch({ type: 'SEND-MESSAGE' });;
     };
 
     let onMessageChange = () => {
         let text = addMessage.current.value;
 
-        props.updateNewMessageChange(text);
+        props.dispatch({ type: 'UPDATE-NEW-MESSAGE-CHANGE', newText: text });
     };
 
     return (

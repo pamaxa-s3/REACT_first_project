@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_CHANGE = 'UPDATE-NEW-POST-CHANGE';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_CHANGE = 'UPDATE-NEW-MESSAGE-CHANGE';
+
 let store = {
     _state: {
         profilePage: {
@@ -76,13 +81,13 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer; //observer(наблюдатель-eng.) патерн! похож на патерн publisher-subscriber. По этому же патерну работает addEventListener и другие обработчики событий (onClick...и т.д.)
     },
-  
+
     selectDialog(userId) {
         this._state.selectedUserId = userId;
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
@@ -92,10 +97,10 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-CHANGE') {
+        } else if (action.type === UPDATE_NEW_POST_CHANGE) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
-        } else if (action.type === 'SEND-MESSAGE') {
+        } else if (action.type === SEND_MESSAGE) {
             let newMessage = {
                 id: 4,
                 message: this._state.messagesPage.messages.newMessageText
@@ -104,12 +109,21 @@ let store = {
             this._state.messagesPage.messages.message.push(newMessage);
             this._state.messagesPage.messages.newMessageText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-MESSAGE-CHANGE') {
+        } else if (action.type === UPDATE_NEW_MESSAGE_CHANGE) {
             this._state.messagesPage.messages.newMessageText = action.newText;
             this._callSubscriber(this._state);
         }
     }
 }
+
+export const addPostActionCreator = () => ({
+    type: ADD_POST
+})
+
+export const updateNewPostChange = (text) => ({
+    type: UPDATE_NEW_POST_CHANGE,
+    newText: text
+})
 
 export default store;
 
