@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 const DialogsItem = (props) => {
 
+    let state = props.store.getState().messagesPage.dialogs;
 
-    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />)
+    let dialogsElements = state.map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />)
 
 
     return (
