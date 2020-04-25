@@ -6,8 +6,8 @@ import MessagesContainer from './Messages/MessagesContainer';
 const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
-            <DialogsItem store={props.store} />
-            <MessagesContainer store={props.store} />
+            <DialogsItem />
+            <MessagesContainer />
         </div>
     );
 }
