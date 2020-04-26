@@ -13,7 +13,7 @@ const Messages = (props) => {
 
     let onMessageChange = () => {
         let text = addMessage.current.value;
-        props.updateNewMessageChange(text);
+        props.onMessageChange(text);
     };
 
     return (
