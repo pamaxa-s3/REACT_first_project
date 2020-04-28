@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 let mapStateToProps = (state) => {
     return {
         messagesPage: state.messagesPage,
-        message: state.messagesPage.messages.message,
-        newMessageText: state.newMessageText
+        messageItem: state.messagesPage.messages.messageItem,
+        newMessageText: state.messagesPage.messages.newMessageText
     }
 }
 
@@ -17,7 +17,7 @@ let mapDispatchToProps = (dispatch) => {
         sendMessage: () => {
             dispatch(sendMessageActionCreator());
         },
-        onMessageChange: (text) => {
+        updateNewMessageChange: (text) => {
             dispatch(updateNewMessageChangeActionCreator(text));
         }
     }

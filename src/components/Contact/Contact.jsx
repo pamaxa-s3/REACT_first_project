@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './Contact.module.css';
+import styles from './Contact.module.css';
 
 const Contact = (props) => {
     return (
-        <div className={s.contact}>
+        <div className={styles.contact}>
             Contact
         </div>
     );

@@ -6,16 +6,16 @@ import { connect } from 'react-redux';
 let mapStateToProps = (state) => {
      return {
           posts: state.profilePage.posts,
-          newPostText: state.newPostText
+          newPostText: state.profilePage.newPostText
      }
 }
 
 let mapDispatchToProps = (dispatch) => {
      return {
-          onAddPost: () => {
+          AddPost: () => {
                dispatch(addPostActionCreator());
           },
-          onPostChange: (text) => {
+          updateNewPostChange: (text) => {
                dispatch(updateNewPostChangeActionCreator(text));
           }
      }

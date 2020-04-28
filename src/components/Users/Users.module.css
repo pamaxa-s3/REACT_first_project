@@ -1,0 +1,15 @@
+.users {
+    color: #c9f52b;
+    font-size: 18px;
+    background-color: #142f88;
+    display: flex;
+}
+
+.avatar {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.userInfo {
+    width: 300px;
+}

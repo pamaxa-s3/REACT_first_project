@@ -1,24 +1,24 @@
 import React from 'react';
-import s from './MyPosts.module.css';
+import styles from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-     let postsElements = props.posts.map(p => <Post message={p.message} avatar={"https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg"} likesCount={p.likesCount} />);
+     let postsElements = props.posts.map(p => <Post message={p.message} avatar={"https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg"} likesCount={p.likesCount} key={p.id} />);
      
      let newPostElement = React.createRef();
      
      let onAddPost = () => {
-          props.onAddPost();
+          props.AddPost();
      };
      
      let onPostChange = () => {
           let text = newPostElement.current.value;
-          props.onPostChange(text);
+          props.updateNewPostChange(text);
      };
 
      return (
-          <div className={s.my_posts}>
-               <div className={s.addPost}>
+          <div className={styles.my_posts}>
+               <div className={styles.addPost}>
                     <div>
                          <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText} />
                     </div>
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
                     </div>
                </div>
 
-               <div className={s.posts}>
+               <div className={styles.posts}>
                     {postsElements}
                </div>
           </div>

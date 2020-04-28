@@ -8,6 +8,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Contact from './components/Contact/Contact';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = () => {
 	return (
@@ -24,6 +25,7 @@ const App = () => {
 					<Route path='/news' render={() => <News />} />
 					<Route path='/music' render={() => <Music />} />
 					<Route path='/contact' render={() => <Contact />} />
+					<Route path='/users' render={() => <UsersContainer />} />
 				</div>
 
 			</div>

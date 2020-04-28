@@ -1,11 +1,11 @@
 import React from 'react';
-import s from './Dialogs.module.css';
+import styles from './Dialogs.module.css';
 import MessagesContainer from './Messages/MessagesContainer';
 import DialogsItemContainer from './DialogsItem/DialogsItemContainer';
 
 const Dialogs = () => {
     return (
-        <div className={s.dialogs}>
+        <div className={styles.dialogs}>
             <DialogsItemContainer />
             <MessagesContainer />
         </div>

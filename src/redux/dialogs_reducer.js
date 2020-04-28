@@ -3,7 +3,7 @@ const UPDATE_NEW_MESSAGE_CHANGE = 'UPDATE-NEW-MESSAGE-CHANGE';
 
 let initialState = {
     messages: {
-        message: [{
+        messageItem: [{
                 id: 1,
                 message: 'Hi everybody!!!'
             },
@@ -65,12 +65,12 @@ const dialogsReducer = (state = initialState, action) => {
             };
 
             let stateCopy = {...state};
-            stateCopy.messages.message = [...state.messages.message]
-            stateCopy.messages.message.push(newMessage);
+            stateCopy.messages.messageItem = [...state.messages.messageItem]
+            stateCopy.messages.messageItem.push(newMessage);
             stateCopy.messages.newMessageText = '';
             return stateCopy;
         }
-        case (UPDATE_NEW_MESSAGE_CHANGE): {
+        case UPDATE_NEW_MESSAGE_CHANGE: {
             let stateCopy = {...state};
 
             stateCopy.messages.newMessageText = action.newText;
@@ -80,6 +80,11 @@ const dialogsReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+
+
+
+
 
 export const sendMessageActionCreator = () => ({
     type: SEND_MESSAGE

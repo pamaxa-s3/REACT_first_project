@@ -1,13 +1,13 @@
 import React from 'react';
-import s from './DialogsItem.module.css'
+import styles from './DialogsItem.module.css'
 import { NavLink } from 'react-router-dom';
 
 const DialogsItem = (props) => {
 
-    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />)
+    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} key={d.id} />)
 
     return (
-        <div className={s.dialogsItems}>
+        <div className={styles.dialogsItems}>
             {dialogsElements}
         </div>
     );
@@ -18,10 +18,10 @@ const DialogItem = (props) => {
     let path = '/dialogs/' + props.id;
 
     return (
-        <div className={s.dialog}>
-            <NavLink to={path} className={s.item} activeClassName='active' >
-                <div className={s.avatar}>
-                    <img src={props.avatar} className={s.image} alt="" />
+        <div className={styles.dialog}>
+            <NavLink to={path} className={styles.item} activeClassName='active' >
+                <div className={styles.avatar}>
+                    <img src={props.avatar} className={styles.image} alt="" />
                 </div>
                 {props.name}
             </NavLink>

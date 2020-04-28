@@ -1,30 +1,30 @@
 import React from 'react';
-import s from './Messages.module.css';
+import styles from './Messages.module.css';
 
 const Messages = (props) => {
 
-    let messagesElements = props.message.map(m => <Message message={m.message} id={m.id} />);
+    let messagesElements = props.messageItem.map(m => <Message message={m.message} id={m.id} key={m.id} />);
 
     let addMessage = React.createRef();
 
-    let sendMessage = () => {
+    let onSendMessage = () => {
         props.sendMessage();
     };
 
     let onMessageChange = () => {
         let text = addMessage.current.value;
-        props.onMessageChange(text);
+        props.updateNewMessageChange(text);
     };
 
     return (
-        <div className={s.messages}>
+        <div className={styles.messages}>
             {messagesElements}
-            <div className={s.addMessageBlock}>
+            <div className={styles.addMessageBlock}>
                 <div>
                     <textarea onChange={onMessageChange} ref={addMessage} value={props.newMessageText} placeholder='Enter your message...' />
                 </div>
                 <div>
-                    <button onClick={sendMessage}>send message</button>
+                    <button onClick={onSendMessage}>Send message</button>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@ const Messages = (props) => {
 }
 
 const Message = (props) => {
-    return <div className={s.message}>{props.message}</div>
+    return <div className={styles.message}>{props.message}</div>
 }
 
 export default Messages;
