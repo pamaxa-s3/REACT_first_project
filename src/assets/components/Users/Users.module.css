@@ -2,7 +2,21 @@
     color: #c9f52b;
     font-size: 18px;
     background-color: #142f88;
-    /* display: flex; */
+    padding: 20px;
+}
+
+.users span {
+    display: inline-block;
+    cursor: pointer;
+    /* width: 25px; */
+    /* height: 25px; */
+    margin-bottom: 50px;
+    margin-right: 10px;
+    padding: 15px 22px;
+    border-radius: 50%;
+    background-color: #8ab;
+    color: #444444;
+    font-weight: 700;
 }
 
 .avatar {
@@ -12,4 +26,12 @@
 
 .userInfo {
     width: 300px;
+}
+
+.selectedPage {
+    font-weight: 700;
+    font-size: 20px;
+    color: #f59e2b !important;
+    padding: 5px;
+    cursor: pointer;
 }
