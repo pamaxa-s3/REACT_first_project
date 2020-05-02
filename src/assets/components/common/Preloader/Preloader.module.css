@@ -1,13 +1,11 @@
-body {
-    background: #212227;
-}
 .cssloadLoader {
     position: relative;
     left: calc(50% - 31px);
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin: 130px 0;
     perspective: 780px;
+
 }
 .cssloadInner {
     position: absolute;
