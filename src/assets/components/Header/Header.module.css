@@ -6,3 +6,22 @@
 .header img {
     width: 200px;
 }
+
+.loginBlock {
+    float: right;
+    margin-right: 20px;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    font-size: 20px;   
+}
+
+.loginBlock a {
+    color: #251b0d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.loginBlock a:hover {
+    color: #274131;
+}
