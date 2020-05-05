@@ -23,3 +23,12 @@ export const usersApi = {
         return instance.post(`follow/${u.id}`)
     },
 }
+
+export const headerApi = {
+    getHeader() {
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data
+            });
+    },
+}
