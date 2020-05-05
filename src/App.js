@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import Sidebar from './assets/components/Sidebar/Sidebar';
-import Dialogs from './assets/components/Dialogs/Dialogs';
+import Sidebar from './components/Sidebar/Sidebar';
+import Dialogs from './components/Dialogs/Dialogs';
 import { Route } from 'react-router-dom';
-import News from './assets/components/News/News';
-import Music from './assets/components/Music/Music';
-import Contact from './assets/components/Contact/Contact';
-import UsersContainer from './assets/components/Users/UsersContainer';
-import ProfileContainer from './assets/components/Profile/ProfileContainer';
-import HeaderContainer from './assets/components/Header/HeaderContainer';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Contact from './components/Contact/Contact';
+import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 const App = () => {
 	return (
