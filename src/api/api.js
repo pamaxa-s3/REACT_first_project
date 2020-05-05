@@ -16,11 +16,11 @@ export const usersApi = {
                 return response.data
             });
     },
-    delFollower(u) {
-        return instance.delete(`follow/${u.id}`)
+    follow(userId) {
+        return instance.delete(`follow/${userId}`)
     },
-    postFollower(u) {
-        return instance.post(`follow/${u.id}`)
+    unfollow(userId) {
+        return instance.post(`follow/${userId}`)
     },
 }
 
