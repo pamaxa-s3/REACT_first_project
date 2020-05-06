@@ -21,14 +21,17 @@ export const usersApi = {
     },
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
-    },
+    }
 }
 
 export const headerApi = {
-    getHeader() {
+    authMe() {
         return instance.get(`auth/me`)
-            .then(response => {
-                return response.data
-            });
-    },
+    }
+}
+
+export const profileApi = {
+    getProfile(userId) {
+        return instance.get(`profile/` + userId)
+    }
 }
