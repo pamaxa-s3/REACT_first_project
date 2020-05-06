@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Messages.module.css';
+import { Redirect } from 'react-router-dom';
 
 const Messages = (props) => {
 
@@ -15,6 +16,10 @@ const Messages = (props) => {
         let text = addMessage.current.value;
         props.updateNewMessageChange(text);
     };
+
+    if(!props.isAuth) {
+        return <Redirect to={'/Login'} />
+    }
 
     return (
         <div className={styles.messages}>
