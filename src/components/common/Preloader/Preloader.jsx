@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Preloader.module.css';
 
-let Loader = (props) => {
+let Preloader = (props) => {
     return (
         <div className={styles.cssloadLoader}>
             <div className={`${styles.cssloadInner} ${styles.cssloadOne}`}></div>
@@ -11,4 +11,4 @@ let Loader = (props) => {
     )
 };
 
-export default Loader;
+export default Preloader;
