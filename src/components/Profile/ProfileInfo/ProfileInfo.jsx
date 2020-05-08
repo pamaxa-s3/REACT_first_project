@@ -22,7 +22,7 @@ const ProfileInfo = (props) => {
         <div className={styles.avatar}>
           <img src={props.profile.photos.small} alt="" />
         </div>
-        <ProfileStatus status={'No marrys'} />
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
         <div className={styles.aboutMe}>{props.profile.aboutMe}</div>
         <div className={styles.lookingForAJob}>{props.profile.lookingForAJob}</div>
         <div className={styles.lookingForAJobDescription}>{props.profile.lookingForAJobDescription}</div>
