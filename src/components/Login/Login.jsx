@@ -3,7 +3,7 @@ import styles from './Login.module.css';
 import { reduxForm, Field } from 'redux-form';
 
 const LoginForm = (props) => {
-    console.log('RERENDER');
+    
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
@@ -26,9 +26,7 @@ const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
 const Login = (props) => {
     
-    const onSubmit = (formData) => {
-
-    }
+    const onSubmit = (formData) => {}
 
     return (
         <div>

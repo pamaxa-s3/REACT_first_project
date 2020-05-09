@@ -33,7 +33,7 @@ let store = {
                         message: 'I`m guess!'
                     }
                 ],
-                newMessageText: ''
+                newMessageBody: ''
             },
             dialogs: [{
                     id: 1,
