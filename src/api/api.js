@@ -13,20 +13,26 @@ export const usersApi = {
     getUsers(currentPage = 1, pageSize = 10) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => {
-                return response.data
+                return response.data;
             });
     },
     follow(userId) {
-        return instance.post(`follow/${userId}`)
+        return instance.post(`follow/${userId}`);
     },
     unfollow(userId) {
-        return instance.delete(`follow/${userId}`)
+        return instance.delete(`follow/${userId}`);
     }
 }
 
 export const headerApi = {
     authMe() {
-        return instance.get(`auth/me`)
+        return instance.get(`auth/me`);
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe});
+    },
+    logout() {
+        return instance.delete('auth/login');
     }
 }
 
