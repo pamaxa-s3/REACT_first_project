@@ -10,7 +10,7 @@ import { Redirect } from 'react-router-dom';
 const maxLength100 = maxLengthCreator(100);
 
 const LoginForm = (props) => {
-    
+
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
@@ -21,7 +21,10 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <Field component={Input} name={'rememberMe'} type='checkbox' />Remember Me
-                </div>
+            </div>
+            {props.error && <div className={styles.formSummaryError}>
+                {props.error}
+            </div>}
             <div>
                 <button>Login</button>
             </div>
@@ -32,12 +35,12 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
 const Login = (props) => {
-    
+
     const onSubmit = (formData) => {
         props.login(formData.email, formData.password, formData.rememberMe)
     }
 
-    if (props.isAuth){
+    if (props.isAuth) {
         return <Redirect to={'/Profile'} />
     }
 
@@ -54,4 +57,4 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth
 })
 
-export default connect(mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, { login })(Login);

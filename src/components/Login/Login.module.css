@@ -14,3 +14,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.formSummaryError {
+    border: 1px solid red;
+    padding: 5px;
+    color: salmon;
+}
