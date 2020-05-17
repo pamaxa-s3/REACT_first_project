@@ -7,12 +7,17 @@ import { Textarea } from '../../common/FormsControls/FormsControls';
 
 const maxLength15 = maxLengthCreator(15);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
+     
      let postsElements = props.posts.map(p => <Post message={p.message} avatar={"https://pbs.twimg.com/media/Cq0M1G6UMAEvVrZ.jpg"} likesCount={p.likesCount} key={p.id} />);
 
      let addNewPost = (values) => {
           props.addPost(values.newPostBody);
      }
+
+     let newPostElement = React.createRef();
+
+     console.log('render');
 
      return (
           <div className={styles.my_posts}>
@@ -24,7 +29,7 @@ const MyPosts = (props) => {
                </div>
           </div>
      );
-}
+});
 
 const AddPostForm = (props) => {
      return (
